@@ -1,15 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import {Database} from 'sqlite3'
+import test from '@/lib/test'
 
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse) 
 {
-    let db = new Database('public/exam.db')
-
-    db.all('select * from thema', (err:any, result:any) => {
-        if (result)
-            res.status(200).json({'result': result})
-        else if (err)
-            res.status(200).json({'error': err.message})
-    })
+    test(res)
 }
