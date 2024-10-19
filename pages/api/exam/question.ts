@@ -4,7 +4,7 @@ import {Database} from 'sqlite3'
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse) 
 {
-    let db = new Database('./public/exam.db')
+    let db = new Database('public/exam.db')
 
     let id = req.query.id+""
 
