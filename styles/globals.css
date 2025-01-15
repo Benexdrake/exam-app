@@ -1,42 +1,55 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color1: #303841;
+  --color2: #3A4750;
+  --color3: #EA9215;
+  --color4: #EEEEEE;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
-a {
-  color: inherit;
+body {
+  background-color: var(--color2);
+}
+
+ul {
+  list-style: none;
+  margin: auto;
+}
+
+.exam_choice {
+  background-color: var(--color1);
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.exam_choice h1 {
+  color: var(--color4);
+  margin-top: 32px;
+  text-align: center;
+}
+
+.exam_button {
+  background-color: var(--color1);
+  width: fit-content;
+  padding: 8px 16px;
+  border: 4px solid var(--color3);
+  border-radius: 50% 2%;
+  margin: 12px;
+  margin: auto;
+  margin-top: 12px;
+}
+
+.exam_button a {
+  color: var(--color4);
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
