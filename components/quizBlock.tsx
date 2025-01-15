@@ -40,10 +40,10 @@ export default function QuizBlock(props: any)
             })}
                 
             <div className={styles.information} style={{display:information?'block':'none'}}>
-                <h3>Correct:</h3>
+                <h3>Correct: mit \n</h3>
                 <p dangerouslySetInnerHTML={{__html:q.explanation.correct}}></p>
-                <h3>Incorrect:</h3>
-                <p dangerouslySetInnerHTML={{__html:q.explanation.incorrect}}></p>
+                <h3>Incorrect: ohne \n</h3>
+                <p dangerouslySetInnerHTML={{__html:q.explanation.incorrect.replaceAll('.\n', '.')}}></p>
                 <h3>Reference:</h3>
                 <a href={q.explanation.reference} target='__blank'>{q.explanation.reference}</a>
             </div>
