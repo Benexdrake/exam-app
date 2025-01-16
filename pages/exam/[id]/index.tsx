@@ -68,9 +68,9 @@ export default function Exam(props:ExamType)
 
 export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-    const id = context.query.id || 1;
+    console.log(context.params?.id)
 
-    let questions = await axios.get(`http://${context.req.headers.host}/api/exam/${id}`).then(x => {return x.data})
+    let questions = await axios.get(`http://${context.req.headers.host}/api/exam/${context.params?.id}`).then(x => {return x.data})
     questions.sort( () => .5 - Math.random());
     
     return {
