@@ -11,11 +11,7 @@ export default function Home(props:any)
     <div className="exam_choice">
     <h1>Please Choose:</h1>
       <ul>
-        {informations && informations.map((x:any) => {
-          return (
-            <li className="exam_button"><a href={`/exam/?id=${x.id}`}>{x.exam}</a> </li>
-          )
-        })}
+        {informations && informations.map((x:any) => { return ( <li className="exam_button"><a href={`/exam/?id=${x.id}`}>{x.exam}</a> </li> ) })}
       </ul>
         </div>
     </>

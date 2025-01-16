@@ -1,0 +1,33 @@
+.result {
+    margin-top: 32px;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--color1);
+    border: 1px solid var(--color4); */
+}
+
+.result h1{
+    color: var(--color4);
+    text-align: center;
+}
+
+.result_block {
+    background-color: var(--color1);
+    border: 1px solid var(--color4);
+    padding: 32px;
+    margin: 16px 0;
+    color: var(--color4);
+    text-align: center;
+
+}
+
+.result_block > div h3 {
+    margin: 32px;
+}
+
+.result_answer {
+    background-color: var(--color1);
+    border: 1px solid var(--color4);
+    padding: 16px;
+    margin: 8px 0;
+}
