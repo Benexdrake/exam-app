@@ -1,10 +1,11 @@
 import QuizBlock from "@/components/quizBlock";
 import QuizProgress from "@/components/QuizProgress";
-import QuizResult from "@/components/quizResult";
 import { Question } from "@/types/question";
 import axios from "axios";
 import { GetServerSidePropsContext } from "next";
 import { useState } from "react";
+
+import styles from '@/styles/practice.module.css'
 
 export type ExamType =
 {
@@ -19,8 +20,6 @@ export default function Exam(props:ExamType)
 
     const [results, setResults] = useState([]);
 
-    const [checkResult, setCheckResult] = useState(false)
-
 
     const changeIndexHandler = () =>
     {
@@ -30,18 +29,27 @@ export default function Exam(props:ExamType)
             return;
         }
 
-        setCheckResult(true)
+        setIndex(0)
+    }
+
+    const onClickHandler = (e:any) =>
+    {
+        setIndex(e);
     }
 
     return (
-            <div className="exam">
-                {checkResult ?
-                (
-                    <QuizResult questions={questions} results={results}/>
-                )
-                :
-                (
-                    <>
+            <div className="exam">    
+                <div style={{display:'flex'}}>
+                    <div className={styles.sidebar}>
+                        {questions.map((x,index:number) => {
+                            return (
+                                <div className={styles.panel} onClick={() => onClickHandler(index)}>
+                                    <span>{index+1}</span> <span>{x.questions.join('').slice(0,30)}...</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div>
                         <div>
                             <QuizProgress index={index} max={questions.length}/>
                         </div>
@@ -51,16 +59,14 @@ export default function Exam(props:ExamType)
                                 // Später ID übergeben, damit jede Componente die Daten selbst fetchen kann
                             )}
                         </div>
-                    </>
-                )}
+                    </div>
+                </div>
             </div>
     )
 }
 
 export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-    // type=exam, learning, undefined = this here
-
     let questions = await axios.get(`http://${context.req.headers.host}/api/questions/${context.params?.id}`).then(x => {return x.data})
     questions.sort( () => .5 - Math.random());
     

@@ -1,0 +1,32 @@
+.sidebar {
+    width: 300px;
+    height: 90vh;
+    background-color: var(--color1);
+    margin: 16px;
+    border: 1px solid var(--color4);
+    overflow-y: scroll;
+}
+
+.panel {
+    background-color: var(--color4);
+    border: 1px solid var(--color1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.panel span {
+    padding: 8px;
+}
+
+.panel:hover {
+    background-color: var(--color1);
+    color: var(--color4);
+    border: 1px solid var(--color3);
+}
+
+.panel:focus {
+    background-color: var(--color1);
+    color: var(--color4);
+    border: 1px solid var(--color3);
+}
