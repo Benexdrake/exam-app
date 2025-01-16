@@ -1,4 +1,3 @@
-import QuizBlock from "@/components/quizBlock";
 import axios from "axios";
 import { GetServerSidePropsContext } from "next";
 
