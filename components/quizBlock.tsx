@@ -64,17 +64,18 @@ export default function QuizBlock(props: QuizBlockProperty)
             
         }
 
-        if(!q.single_choice)
-            for(let i = 0; i< q.answers.length; i++)
+        // if(!q.single_choice)
+        for(let i = 0; i< q.answers.length; i++)
+        {
+            if(inputs[i].checked && !q.answers[i].check)
             {
-                if(inputs[i].checked && !q.answers[i].check)
-                {
-                    won = false;
-                    break;
-                }
+                won = false;
+                break;
             }
+        }
             
         setResults([...results, {id:q.id, check:won}])
+        console.log(won)
     }
 
     const getInputs = () => 
@@ -100,23 +101,8 @@ export default function QuizBlock(props: QuizBlockProperty)
                     <button type="button" id='krasser_geiler_button' style={{display:'none'}} onClick={onCheckHandler}>Check</button>
                 </div>
             </div>
-            {q.single_choice ? 
-            (<div>
-                    {/* <form id='radio'></form> */}
-                    {q.answers.map((x: Answer, index:number) =>
-                        {   
-                            return (
-                                <label key={index} className={styles.answer}>
-                                    <div><input type="radio" id={index+""} name='radio' value={x.check+''} /></div>
-                                    <div >
-                                    {x.answer}
-                                    </div>
-                                </label>
-                            )
-                        })}
-                    </div>)
-                        :
-                        (<div>
+
+            <div>
                         {q.answers.map((x: Answer, index:number) =>
                             {   
                                 return (
@@ -126,8 +112,9 @@ export default function QuizBlock(props: QuizBlockProperty)
                                 )
                             })}
         
-                        </div>)
-            }
+                        </div>
+
+
                 
             <div className={styles.information} style={{display:information?'block':'none'}}>
                 <h3>Correct:</h3>
