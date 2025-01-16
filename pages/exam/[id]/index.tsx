@@ -17,12 +17,10 @@ export default function Exam(props:ExamType)
 
     const [index, setIndex] = useState(0);
 
-    // [{id:1, check:false},{id:2, check:true}]
     const [results, setResults] = useState([]);
 
     const [checkResult, setCheckResult] = useState(false)
 
-    // const [checkHandler, setCheckHandler] = useState(() => {console.log('HELLO')});
 
     const changeIndexHandler = () =>
     {
@@ -33,9 +31,6 @@ export default function Exam(props:ExamType)
         }
 
         setCheckResult(true)
-
-        // User ist fertig und wird zu einer Result Seite weitergeleitet.
-        // Dort sieht man eine Auflistung/Grafik
     }
 
     return (
@@ -68,7 +63,7 @@ export default function Exam(props:ExamType)
 
 export async function getServerSideProps(context:GetServerSidePropsContext)
 {
-    console.log(context.params?.id)
+    // type=exam, learning, undefined = this here
 
     let questions = await axios.get(`http://${context.req.headers.host}/api/exam/${context.params?.id}`).then(x => {return x.data})
     questions.sort( () => .5 - Math.random());
