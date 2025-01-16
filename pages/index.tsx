@@ -8,9 +8,15 @@ export default function Home(props:any)
   return (
     <>
     <div className="exam_choice">
-    <h1>Please Choose:</h1>
+    <h1 className="exam_header">Please Choose:</h1>
+    <br />
       <ul>
-        {informations && informations.map((x:any) => { return ( <li className="exam_button" key={x.id}><a href={`/exam/${x.id}`}>{x.exam}</a> </li> ) })}
+        {informations && informations.map((x:any) => { return ( <li className="exam_button" key={x.id}><a href={`/exam/${x.id}`}>Exam Mode: {x.exam}</a> </li> ) })}
+        <br />
+        <br />
+        <hr />
+        <br />
+        {informations && informations.map((x:any) => { return ( <li className="exam_button" key={x.id}><a href={`/practice/${x.id}`}>Practice Mode: {x.exam}</a> </li> ) })}
       </ul>
         </div>
     </>
