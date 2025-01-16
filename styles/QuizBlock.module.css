@@ -18,11 +18,11 @@
   color: var(--color4);
 }
 
-.main p {
+.header p {
   color: var(--color4);
   margin: 16px 0;
   text-wrap: wrap;
-  max-width: 650px;
+  max-width: 550px;
 }
 
 .answer {
@@ -62,6 +62,7 @@
   text-align: justify;
   margin: auto;
   white-space: pre-line;
+  color: var(--color4);
 }
 
 .information a {

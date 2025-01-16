@@ -1,17 +1,27 @@
 import styles from '@/styles/QuizBlock.module.css'
+import { Question } from '@/types/question'
 import { useState } from 'react'
 
-export default function QuizBlock(props: any) 
+type QuizBlockProperty =
 {
-    const { q, nr } = props
+    q:Question;
+    nr:number;
+    changeIndexHandler:Function;
+    setResults:Function;
+}
+
+export default function QuizBlock(props: QuizBlockProperty) 
+{
+    const { q, nr, changeIndexHandler } = props
     const [information, setInformation] = useState(false)
     
-
+    
     const onCheckHandler = (e:any) => {
         if(e.target.innerText === 'Next')
         {
             setInformation(false)
             e.target.innerText = 'Check';
+            changeIndexHandler();
             return;
         }
         
@@ -40,12 +50,16 @@ export default function QuizBlock(props: any)
             })}
                 
             <div className={styles.information} style={{display:information?'block':'none'}}>
-                <h3>Correct: mit \n</h3>
+                <h3>Correct:</h3>
                 <p dangerouslySetInnerHTML={{__html:q.explanation.correct}}></p>
-                <h3>Incorrect: ohne \n</h3>
-                <p dangerouslySetInnerHTML={{__html:q.explanation.incorrect.replaceAll('.\n', '.')}}></p>
+                <br /><br /><br />
+                <hr />
+                <h3>Incorrect:</h3>
+                <p dangerouslySetInnerHTML={{__html:q.explanation.incorrect}}></p>
+                <br /><br /><br />
+                <hr />
                 <h3>Reference:</h3>
-                <a href={q.explanation.reference} target='__blank'>{q.explanation.reference}</a>
+                <a href={q.explanation.reference} target='__blank'>Open Reference</a>
             </div>
 
         </div>
