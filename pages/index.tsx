@@ -1,10 +1,5 @@
-import axios from "axios";
-import { GetServerSidePropsContext } from "next";
-
-export default function Home(props:any)
+export default function Home()
 {
-  const {informations} = props;
-
   return (
     <>
       <div className="exam_choice">
@@ -13,16 +8,4 @@ export default function Home(props:any)
       </div>
     </>
   );
-}
-
-export async function getServerSideProps(context:GetServerSidePropsContext)
-{
-  const informations = await axios.get(`http://${context.req.headers.host}/api/questions`).then(x => {return x.data})
-
-    return {
-        props: 
-        {
-          informations
-        }
-    }
 }

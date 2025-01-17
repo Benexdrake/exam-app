@@ -1,6 +1,8 @@
-import styles from '@/styles/QuizBlock.module.css'
-import { Answer, Question } from '@/types/question'
 import { useState } from 'react'
+
+import styles from '@/styles/quiz_block.module.css'
+
+import { Answer, Question } from '@/types/question'
 
 type QuizBlockProperty =
 {

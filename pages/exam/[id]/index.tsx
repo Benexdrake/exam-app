@@ -1,10 +1,12 @@
-import QuizBlock from "@/components/quizBlock";
-import QuizProgress from "@/components/QuizProgress";
-import QuizResult from "@/components/quizResult";
-import { Question } from "@/types/question";
 import axios from "axios";
 import { GetServerSidePropsContext } from "next";
 import { useState } from "react";
+
+import QuizBlock from "@/components/quiz_block";
+import QuizProgress from "@/components/quiz_progress";
+import QuizResult from "@/components/quiz_result";
+
+import { Question } from "@/types/question";
 
 export type ExamType =
 {

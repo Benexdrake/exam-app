@@ -1,4 +1,5 @@
-import styles from '@/styles/QuizResult.module.css'
+import styles from '@/styles/quiz_result.module.css'
+
 import { Answer, Question } from '@/types/question';
 import { Result } from '@/types/result';
 

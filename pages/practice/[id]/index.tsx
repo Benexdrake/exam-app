@@ -1,5 +1,5 @@
-import QuizBlock from "@/components/quizBlock";
-import QuizProgress from "@/components/QuizProgress";
+import QuizBlock from "@/components/quiz_block";
+import QuizProgress from "@/components/quiz_progress";
 import { Question } from "@/types/question";
 import axios from "axios";
 import { GetServerSidePropsContext } from "next";

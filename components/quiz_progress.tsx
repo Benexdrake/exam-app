@@ -1,4 +1,4 @@
-import styles from '@/styles/QuizProgress.module.css'
+import styles from '@/styles/quiz_progress.module.css'
 
 export default function QuizProgress(props:any)
 {
