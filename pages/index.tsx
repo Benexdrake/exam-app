@@ -7,18 +7,10 @@ export default function Home(props:any)
 
   return (
     <>
-    <div className="exam_choice">
-    <h1 className="exam_header">Please Choose:</h1>
-    <br />
-      <ul>
-        {informations && informations.map((x:any) => { return ( <li className="exam_button" key={x.id}><a href={`/exam/${x.id}`}>Exam Mode: {x.exam}</a> </li> ) })}
-        <br />
-        <br />
-        <hr />
-        <br />
-        {informations && informations.map((x:any) => { return ( <li className="exam_button" key={x.id}><a href={`/practice/${x.id}`}>Practice Mode: {x.exam}</a> </li> ) })}
-      </ul>
-        </div>
+      <div className="exam_choice">
+        <h1>Willkommen</h1>
+        <p>In der Navbar finden Sie alle bisher verfügbaren Fragen mit den Modis Practice und Exam</p>
+      </div>
     </>
   );
 }

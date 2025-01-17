@@ -1,0 +1,35 @@
+.navbar_body {
+    height: 4rem;
+    background-color: var(--color1);
+    border-bottom: 3px solid var(--color3);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_links {
+
+}
+
+.navbar_links ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar_item {
+    height: 4rem;
+    padding: 25px 20px 20px 20px;
+}
+
+.navbar_item:hover {
+    background-color: var(--color2);
+    color: var(--color3);
+    border-bottom: 3px solid var(--color4);
+}
+
+.navbar_body a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
