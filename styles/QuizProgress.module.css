@@ -10,8 +10,8 @@
 
 .quiz_progress p {
     color: var(--color4);
-    margin: 8px;
-    margin-left: 16px;
+    width: 60px;
+    margin-left: 32px;
 }
 
 .progress_background {
@@ -40,4 +40,5 @@
     border: 3px solid var(--color3);
     border-radius: 8px;
     margin: 8px;
+    margin-right: 32px;
   }
