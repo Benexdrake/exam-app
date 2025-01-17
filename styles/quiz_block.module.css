@@ -7,6 +7,7 @@
   width: 800px;
   max-height: calc(100vh - 8.3rem);;
   overflow-y: scroll;
+  color: var(--color1)
 }
 
 .header {
@@ -49,6 +50,7 @@
   margin-right: 32px;
   margin-left: 8px;
   transform: scale(2);
+  color: var(--color1);
 }
 
 .check_button {

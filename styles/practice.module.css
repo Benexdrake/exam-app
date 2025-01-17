@@ -12,6 +12,7 @@
     height: 50px;
     display: flex;
     align-items: center;
+    color: var(--color1);
 }
 
 .panel span {
