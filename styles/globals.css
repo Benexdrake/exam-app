@@ -21,8 +21,17 @@ body {
   scrollbar-color: var(--color3) var(--color1);
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+}
+
 ul {
   list-style: none;
+  margin: auto;
+}
+
+.main {
   margin: auto;
 }
 
@@ -62,7 +71,5 @@ ul {
 }
 
 .exam {
-  width: 1200px;
-  height: 100vh;
   margin: auto;
 }

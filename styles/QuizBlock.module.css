@@ -5,6 +5,8 @@
   border-top: 0px;
   padding: 32px;
   width: 800px;
+  max-height: calc(100vh - 8.3rem);;
+  overflow-y: scroll;
 }
 
 .header {
