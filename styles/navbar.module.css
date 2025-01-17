@@ -34,3 +34,15 @@
     color: white;
     font-weight: bold;
 }
+
+.color_button {
+    border: 1px solid black;
+    /* margin: 4px; */
+    width: 20px;
+}
+
+.color_button:hover {
+    width: 50px;
+    border-color: #EEE;
+    cursor: pointer;
+}
